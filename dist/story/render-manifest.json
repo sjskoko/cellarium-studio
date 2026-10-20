@@ -1,0 +1,89 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 15,
+  "frames": 450,
+  "seed": 42,
+  "clips": [
+    {
+      "id": "01-small-rules",
+      "preset": "glider",
+      "dim": 2,
+      "size": 24,
+      "lines": [
+        "Five cells.",
+        "A moving pattern."
+      ],
+      "label": "01 / SMALL RULES",
+      "sub": "The pattern shifts. Individual cells stay in place.",
+      "speed": 3
+    },
+    {
+      "id": "02-changing-rules",
+      "preset": "highlife",
+      "dim": 2,
+      "size": 64,
+      "lines": [
+        "Change one rule.",
+        "Change the world."
+      ],
+      "label": "02 / CUSTOM BIRTH RULES",
+      "sub": "HighLife · Birth 3, 6 / Survival 2, 3",
+      "speed": 8
+    },
+    {
+      "id": "03-elemental-waves",
+      "preset": "elements",
+      "dim": 2,
+      "size": 80,
+      "lines": [
+        "Five states.",
+        "Local decisions."
+      ],
+      "label": "03 / ELEMENTAL WORLDS",
+      "sub": "Empty · Water · Fire · Air · Earth",
+      "speed": 12
+    },
+    {
+      "id": "04-between-zero-and-one",
+      "preset": "fire",
+      "dim": 2,
+      "size": 48,
+      "lines": [
+        "Between 0 and 1,",
+        "a pattern grows."
+      ],
+      "label": "04 / CONTINUOUS STATES",
+      "sub": "Lenia · smooth neighborhoods, continuous growth.",
+      "speed": 20
+    },
+    {
+      "id": "05-another-dimension",
+      "preset": "life",
+      "dim": 3,
+      "size": 20,
+      "density": 0.25,
+      "lines": [
+        "Add a dimension.",
+        "Find a new world."
+      ],
+      "label": "05 / THREE DIMENSIONS",
+      "sub": "A cubic lattice · 26 neighbors · B6/S5,6,7",
+      "speed": 1
+    },
+    {
+      "id": "06-time-is-a-playground",
+      "preset": "water",
+      "dim": 2,
+      "size": 48,
+      "lines": [
+        "Pause the world.",
+        "Explore its history."
+      ],
+      "label": "06 / TIME EXPLORATION",
+      "sub": "Deterministic history replay — not reverse physics.",
+      "speed": 20
+    }
+  ]
+}
