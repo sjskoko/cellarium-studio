@@ -20,7 +20,7 @@ async function main(){
   const c=configFor(spec.preset,spec.dim,{size:spec.size,seed:42,...(spec.density?{density:spec.density}:{})}),m=new Model(c),origin=m.snapshot(),frames=[];
   if(spec.id.startsWith('06')){for(let i=0;i<181;i++){frames.push(m.snapshot());m.step();}}
   const file=path.join(out,spec.id+'.mp4');
-  const ff=spawn('ffmpeg',['-y','-hide_banner','-loglevel','error','-f','rawvideo','-pixel_format','rgba','-video_size','1080x1920','-framerate','30','-i','pipe:0','-an','-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-movflags','+faststart',file],{stdio:['pipe','inherit','inherit'],windowsHide:true});
+  const ff=spawn('ffmpeg',['-y','-hide_banner','-loglevel','error','-f','rawvideo','-pixel_format','rgba','-video_size','1080x1920','-framerate','30','-i','pipe:0','-an','-c:v','libx264','-preset','fast','-threads','2','-crf','21','-pix_fmt','yuv420p','-movflags','+faststart',file],{stdio:['pipe','inherit','inherit'],windowsHide:true});
   const done=new Promise((res,rej)=>{ff.on('error',rej);ff.on('exit',code=>code===0?res():rej(Error('FFmpeg failed '+code)));});
   ff.stdin.on('error',()=>{});
   for(let f=0;f<450;f++){

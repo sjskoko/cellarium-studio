@@ -66,7 +66,7 @@ Browser recording is 720×1280. MP4 is selected only if supported; otherwise Web
 
 ## Deployment
 
-Set GitHub Pages source to **GitHub Actions**. `.github/workflows/pages.yml` tests the model and publishes `dist/` on pushes to `main`. All app assets use relative URLs suitable for a project subpath.
+Set GitHub Pages source to **GitHub Actions**. `.github/workflows/pages.yml` tests the model, generates the six MP4 films and covers, and publishes `dist/` on pushes to `main`. All app assets use relative URLs suitable for a project subpath.
 
 ## References
 
@@ -78,3 +78,5 @@ Set GitHub Pages source to **GitHub Actions**. `.github/workflows/pages.yml` tes
 - [Original Lenia notebook and reference organisms](https://github.com/Chakazul/Lenia/blob/master/Jupyter/Lenia.ipynb); the seed data is distributed with its [MIT license](dist/LENIA-LICENSE.txt).
 
 3D visualization uses depth-sorted small voxel marks, not a physically based volume renderer. Mobile grid sizes are bounded (2D up to 160², 3D up to 28³); large time jumps can take time. No analytics are collected by the app.
+
+The repository stores reproducible source and recipes. GitHub Actions generates media during deployment; download films from the published story page. The local creator pack includes ready-made media. Renderer dependency: @napi-rs/canvas 0.1.100 and FFmpeg.

@@ -13,8 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
       - name: Test cellular models and timeline
         run: npm test
+      - name: Install the film renderer
+        run: |
+          npm install --no-save --package-lock=false @napi-rs/canvas@0.1.100
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-liberation
+      - name: Render all six films and covers
+        env:
+          CELLARIUM_FONT: /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
+        run: node scripts/render-reels.cjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
